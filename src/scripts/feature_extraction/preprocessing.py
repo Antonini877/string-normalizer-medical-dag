@@ -1,3 +1,14 @@
+import pandas as pd
+
+
+def preprocess() -> None:
+    df = pd.read_csv('./files/data_med.csv')
+
+    preprocessor = Preprocessor(df)
+
+    df = preprocessor.create_feature_columns()
+
+    df.to_csv('./files/processed_data_med.csv', index=False)
 
 
 class Preprocessor:
@@ -18,6 +29,13 @@ class Preprocessor:
         )
 
         self.__data_clean()
+
+        self.df = self.df.rename(columns={
+                'Principio Ativo': 'active_ingredients',
+                'Nome': 'complement',
+                'dosagem': 'dosage',
+                'comprimidos': 'format'
+            }).drop(['Status'], axis=1)
 
         return self.df
     
