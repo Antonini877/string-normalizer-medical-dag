@@ -31,7 +31,7 @@ with DAG(
 
     writing_task = PythonOperator(
         task_id='write_to_database',
-        python_callable=preprocess,
+        python_callable=write,
     )
 
     preprocessor_task >> writing_task
