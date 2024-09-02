@@ -15,7 +15,7 @@ To run this project, you need the following:
 
 1. **Docker and Docker Compose**: To containerize the Airflow environment.
 2. **Apache Airflow**: To manage the workflow.
-3. **MySQL Database**: To store the processed data.
+3. **PostgreSQL Database**: To store the processed data.
 4. **Python Packages**: pandas.
 
 
